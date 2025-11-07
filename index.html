@@ -1489,7 +1489,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             for (const [subCode, gridId] of Object.entries(categories)) {
-                const categoryProducts = allProducts.filter(p => p.sub === subCode);
+                const categoryProducts = allProducts.filter(p => p.sub.split('|').includes(subCode));
                 const targetGrid = document.getElementById(gridId);
                 
                 if (targetGrid) {
