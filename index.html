@@ -272,18 +272,18 @@ hr{
       justify-content: center;
     }
 
-    .product-card {
-      background: var(--primary-dark);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 0 15px var(--primary);
-      transition: all 0.3s ease;
-      border: 1px solid var(--primary);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 500px;
-    }
+.product-card {
+    background: var(--primary-dark);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 15px var(--primary);
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px; /* <--- تأكد من وجود هذا السطر */
+}
 
     .product-card:hover {
       transform: translateY(-8px);
@@ -291,28 +291,25 @@ hr{
     }
 
 .product-image {
-    width: 100%; /* اجعل العرض يأخذ 100% من الأب (الكرت) */
-    padding-bottom: 100%; /* استخدم هذا لجعل الارتفاع مساويًا للعرض، مما يخلق مربعًا */
-    position: relative; /* ضروري لوضع الصورة بداخله */
-    overflow: hidden; /* لإخفاء أي جزء زائد من الصورة إذا كانت أبعادها مختلفة */
-    display: flex; /* ليتوسط الصورة بداخله */
-    justify-content: center;
-    align-items: center;
-    background: var(--accent); /* لون خلفية يظهر إذا كانت الصورة شفافة أو أصغر */
-    border-top-left-radius: 15px; /* للتناسب مع حواف الكرت */
-    border-top-right-radius: 15px; /* للتناسب مع حواف الكرت */
+    height: 280px;      /* 1. تحديد ارتفاع ثابت للمربع */
+    width: 280px;       /* 2. تحديد عرض ثابت للمربع (نفس الارتفاع) */
+    align-self: center; /* 3. توسيط المربع أفقيًا داخل الكرت */
+    margin-top: 20px;   /* 4. إضافة هامش علوي للمنظر */
+    
+    position: relative; /* ضروري لعمل object-fit */
+    overflow: hidden;   /* ضروري لعمل object-fit */
+    border-radius: 15px; /* لجعل المربع بحواف دائرية */
+    background: var(--accent);
+    flex-shrink: 0; /* لمنع المربع من الانكماش */
 }
 
 .product-image img {
-    position: absolute; /* لجعل الصورة تملأ المربع */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; 
-    object-fit: cover; /* تحافظ على الأبعاد وتملأ المربع مع قص الزوائد */
-    /* إذا أردت أن تظهر الصورة كاملة مع وجود مساحات فارغة حولها (Letterboxing) استخدم 'contain' بدلاً من 'cover':
-    object-fit: contain;
-    */
+    object-fit: cover; /* يملأ المربع مع الحفاظ على الأبعاد */
 }
 
     .product-info {
