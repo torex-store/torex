@@ -291,18 +291,28 @@ hr{
     }
 
 .product-image {
-    height: 200px;
-    width: 100%; /* <--- التعديل هنا */
-    display: flex;
+    width: 100%; /* اجعل العرض يأخذ 100% من الأب (الكرت) */
+    padding-bottom: 100%; /* استخدم هذا لجعل الارتفاع مساويًا للعرض، مما يخلق مربعًا */
+    position: relative; /* ضروري لوضع الصورة بداخله */
+    overflow: hidden; /* لإخفاء أي جزء زائد من الصورة إذا كانت أبعادها مختلفة */
+    display: flex; /* ليتوسط الصورة بداخله */
     justify-content: center;
     align-items: center;
-    background: var(--accent); 
+    background: var(--accent); /* لون خلفية يظهر إذا كانت الصورة شفافة أو أصغر */
+    border-top-left-radius: 15px; /* للتناسب مع حواف الكرت */
+    border-top-right-radius: 15px; /* للتناسب مع حواف الكرت */
 }
 
 .product-image img {
+    position: absolute; /* لجعل الصورة تملأ المربع */
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%; 
-    object-fit: cover; /* <--- التعديل هنا */
+    object-fit: cover; /* تحافظ على الأبعاد وتملأ المربع مع قص الزوائد */
+    /* إذا أردت أن تظهر الصورة كاملة مع وجود مساحات فارغة حولها (Letterboxing) استخدم 'contain' بدلاً من 'cover':
+    object-fit: contain;
+    */
 }
 
     .product-info {
