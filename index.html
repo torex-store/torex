@@ -290,21 +290,20 @@ hr{
       box-shadow: 0 0 25px var(--primary);
     }
 
-    .product-image {
-      height: 200px;
-      width: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: var(--accent); 
+.product-image {
+    height: 200px;
+    width: 100%; /* <--- التعديل هنا */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--accent); 
+}
 
-    }
-
-    .product-image img {
-      width: 100%;
-      height: 100%; 
-      object-fit:fill;
-    }
+.product-image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; /* <--- التعديل هنا */
+}
 
     .product-info {
       padding: 20px;
