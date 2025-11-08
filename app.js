@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* !! الصق الروابط هنا !! */
     const reviewSheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSPa6WPFhppRsBLPOra9BMHHtrooU_sNmWX2eQG7F1EPUTD9MAX3LHT61iqX448Wt2gEchNHWth7Pze/pub?gid=169688022&single=true&output=csv'; 
-    const reviewAppURL = 'https://script.google.com/macros/s/AKfycbxRtJxTemuP0SjWjNJuKtExgMntDz-GLdYh_v1zFvWLIaWyUqeJEdbLOxLgDgwSm1C3/exec'; 
+    const reviewAppURL = 'https://script.google.com/macros/s/AKfycbyhInciVkZyALQb8RZ-OGuxtcdHaMZDvlYTm1aS3NItr9X5WL9D1clhp5kVQ3q1wwXr/exec'; 
     /* !! نهاية قسم الروابط !! */
 
 
