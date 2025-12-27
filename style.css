@@ -1104,4 +1104,74 @@ hr{
   background-color: var(--primary-dark);
   color: #ffffff;
 }
+/* ===== Language & Currency (Top Mini) ===== */
+.top-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.lang-toggle {
+  display: flex;
+  background: var(--gray-light);
+  padding: 4px;
+  border-radius: 16px;
+}
+
+.lang-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.lang-toggle button.active {
+  background: var(--primary);
+  color: white;
+}
+
+.currency-box {
+  position: relative;
+}
+
+.currency-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.currency-menu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1200;
+}
+
+.currency-menu button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  padding: 8px 14px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.currency-menu button:hover {
+  background: var(--primary-dark);
+  color: white;
+}
 /* ==== نهاية كود القائمة المنسدلة ==== */
