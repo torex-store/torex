@@ -1470,6 +1470,216 @@ h2::after {
 .reviews-slider-wrapper {
 
 }
+/* =================================================
+   FINAL HEADER FIX (MOBILE)
+   NO OTHER CSS MODIFIED
+   ================================================= */
+
+/* إعادة ضبط الهيدر */
+.headernav {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap;
+}
+
+/* إلغاء absolute من القائمة */
+.headernav > ul {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+/* إلغاء absolute من الأزرار */
+.header-actions {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    direction: ltr;
+}
+
+/* =====================
+   MOBILE FIX
+   ===================== */
+@media (max-width: 768px) {
+
+    .headernav {
+        flex-wrap: wrap !important;
+        gap: 12px;
+    }
+
+    .websitename {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 2;
+    }
+
+    .headernav > ul {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+}
+/* =====================
+   HEADER MOBILE FIX v2
+   (keeps menu in one row with horizontal scroll)
+   ===================== */
+
+@media (max-width: 768px) {
+
+  /* نخلي الهيدر صفّين واضحين */
+  .headernav{
+    display: grid !important;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand actions"
+      "menu  menu";
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .websitename{
+    grid-area: brand;
+  }
+
+  .header-actions{
+    grid-area: actions;
+    justify-content: flex-end !important;
+  }
+
+  /* ✅ أهم جزء: القائمة سطر واحد وتمرير أفقي */
+  .headernav > ul{
+    grid-area: menu;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+
+    gap: 18px !important;
+    justify-content: flex-start !important;
+
+    padding: 6px 0 !important;
+    margin: 0 !important;
+  }
+
+  /* كل عنصر ما ينضغط ولا ينزل سطر */
+  .headernav > ul li{
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+}
+/* =========================
+   MOBILE HEADER LAYOUT (FINAL)
+   ========================= */
+@media (max-width: 768px){
+
+  /* الهيدر يصير 3 صفوف */
+  .headernav{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "brand"
+      "actions"
+      "menu" !important;
+    gap: 10px !important;
+    padding: 14px 16px !important;
+  }
+
+  /* اسم المتجر */
+  .websitename{
+    grid-area: brand !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
+    width: 100% !important;
+  }
+
+  /* الأزرار */
+  .header-actions{
+    grid-area: actions !important;
+    width: 100% !important;
+
+    /* RTL طبيعي (عشان ما تلخبط) */
+    direction: rtl !important;
+
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    gap: 10px !important;
+
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* خلي كل زر/عنصر ما يكبر بشكل مزعج */
+  .header-actions > *{
+    flex: 0 0 auto !important;
+  }
+
+  /* القائمة (المنيو) */
+  .headernav > ul{
+    grid-area: menu !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+
+    width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+
+    justify-content: flex-start !important;
+    gap: 16px !important;
+
+    padding: 6px 0 !important;
+    margin: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+  }
+
+  .headernav > ul li{
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* تصغير بسيط للنص لتفادي كسر سطر */
+  .headernav > ul li,
+  .btn-list{
+    font-size: 15px !important;
+  }
+
+  /* مهمة: الدروب داون يفتح تحت المنيو بدون ما يطلع خارج الشاشة */
+  .dropdown-menu{
+    right: 0 !important;
+    left: auto !important;
+    max-width: 92vw !important;
+  }
+}
+
 </style>
 </head>
 
