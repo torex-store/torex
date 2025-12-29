@@ -1687,7 +1687,7 @@ h2::after {
 <body>
     <header>
         <nav class="headernav">
-            <span class="websitename">متجر توركس</span>
+            <span class="websitename" id="site-name">متجر توركس</span>
             <ul>
                 <li><a class="btn-list" href="#home" id="nav-home">الرئيسية</a></li>
                 
@@ -1955,6 +1955,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const translations = {
         ar: {
+            siteName: 'متجر توركس',
             dir: 'rtl',
             bodyClass: '',
             navHome: 'الرئيسية',
@@ -2001,6 +2002,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitReview: 'إرسال التقييم'
         },
         en: {
+            siteName: 'Torex Store',
             dir: 'ltr',
             bodyClass: 'lang-en',
             navHome: 'Home',
@@ -2605,6 +2607,8 @@ async function displayReviews(reviews, langForCards = 'ar') {
         langToggle?.querySelectorAll('button').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === lang);
         });
+        const siteName = document.getElementById('site-name');
+        if (siteName) siteName.textContent = t.siteName;
 
         const home = document.getElementById('nav-home'); if (home) home.textContent = t.navHome;
         const navProductsLabel = document.getElementById('nav-products-label'); if (navProductsLabel) navProductsLabel.textContent = t.navProducts;
